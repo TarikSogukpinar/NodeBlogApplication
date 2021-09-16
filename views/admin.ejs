@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%-include('./inc/head') %>
+  </head>
+  <body>
+    <%-include('./inc/nav') %>
+    <section>
+      <a href="/blog/add">Yeni Yazı Ekle</a>
+      <h1>Yazilar</h1>
+      <ul>
+        <% blogs.forEach(blog => { %>
+        <li>
+          <p><%=blog.title%></p>
+          <a class="del" data-doc="<%=blog._id%>">Sil</a>
+        </li>
+
+        <% }) %>
+      </ul>
+    </section>
+    <script>
+      const del = document.querySelectorAll("a.del");
+      const delLinks = [].slice.call(del);
+      delLinks.forEach((item, i) => {
+        item.addEventListener("click", (e) => {
+          const endpoint = `/admin/delete/${item.dataset.document}`;
+        });
+
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => {
+            response.json();
+          })
+          .then((data) => {
+            window.location.href = data.link;
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
+  </body>
+</html>
