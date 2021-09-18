@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const adminRoutes = require("./routes/adminRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const authRoutes = require("./routes/authRoutes");
+const aboutRoutes = require("./routes/aboutRoutes");
+
 const { requireAuth, checkUser } = require("./middlewares/authMiddleware");
 
 const app = express();
@@ -42,16 +44,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/", authRoutes);
-app.use("/blog", adminRoutes);
-app.use("/admin", requireAuth, blogRoutes);
-
-app.get("/about", (req, res) => {
-  res.render("about", { title: "Hakkımızda " });
-});
-
-app.get("/about-us", (req, res) => {
-  res.redirect("/about");
-});
+app.use("/blog", blogRoutes);
+app.use("/admin", requireAuth, adminRoutes);
+app.get("/about", aboutRoutes);
+app.get("/about-us", aboutRoutes);
 
 app.use((req, res) => {
   res.render("404", { title: "Sayfa Bulunamadı !" });

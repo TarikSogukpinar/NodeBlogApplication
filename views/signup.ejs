@@ -1,16 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/style.css" />
     <%-include('./inc/head') %>
   </head>
   <body>
     <%-include('./inc/nav') %>
   </body>
+  <br />
+  <br />
+  <br />
+  <br />
   <section>
     <form action="" method="post">
-      <input type="text" name="username" placeholder="Kullanici Adi" required />
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <main class="form-signin">
+              <form>
+                <h1 class="h3 mb-3 fw-normal">Lütfen Kayıt Olun !</h1>
+
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="username"
+                    required
+                    placeholder="Kullanıcı Adı"
+                  />
+                  <label for="floatingInput">Kullanıcı Adı</label>
+                </div>
+                <br />
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="floatingEmail"
+                    placeholder="Email"
+                  />
+                  <label for="floatingEmail">Email</label>
+                </div>
+                <br />
+                <div class="form-floating">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Şifre</label>
+                </div>
+                <br />
+
+                <button
+                  class="w-100 btn btn-lg btn-primary"
+                  type="submit"
+                  value="Kayit"
+                >
+                  Kayıt Ol!
+                </button>
+              </form>
+              <br />
+              <br />
+            </main>
+          </div>
+        </div>
+      </div>
+      <!-- <input type="text" name="username" placeholder="Kullanici Adi" required />
       <input type="password" name="password" placeholder="Parola" required />
-      <input type="submit" value="Kayit" />
+      <input type="text" name="email" placeholder="Email" required />
+      <input type="submit" value="Kayit" /> -->
     </form>
   </section>
+  <%-include('./inc/loginAdvertisement') %> <%-include('./inc/footer') %>
 </html>

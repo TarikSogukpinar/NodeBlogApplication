@@ -1,30 +1,70 @@
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border-bottom: 3px solid #000;
-}
-nav ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-}
-nav ul li {
-  margin-right: 30px;
-}
-section {
-  max-width: 1200px;
-  margin: 40px auto;
+html,
+body {
+  height: 100%;
+
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: 40px auto;
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 10px;
+  margin: auto;
 }
 
-form input {
-  margin-top: 10px;
-  padding: 5px 10px;
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }

@@ -1,21 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="/style.css" />
     <%-include('./inc/head') %>
   </head>
   <body>
     <%-include('./inc/nav') %>
+    <br />
     <section>
-      <h1>Yazilar</h1>
-      <ul>
-        <% blogs.forEach(blog => { %>
-        <li>
-          <a href="/blog/<%=blog._id%>"><%=blog.title%> </a>
-          <p><%=blog.short%></p>
-        </li>
-
-        <% }) %>
-      </ul>
+      <!-- <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h1>Yazilar</h1>
+            <ul>
+             
+            </ul>
+          </div>
+        </div> -->
+      </div>
     </section>
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Yazılar</h1>
+          <p>
+          
+            This is a template for a simple marketing or informational website.
+            It includes a large callout called a jumbotron and three supporting
+            pieces of content. Use it as a starting point to create something
+            more unique.
+          </p>
+          <p>
+            <a class="btn btn-primary btn-lg" href="#" role="button"
+              >Learn more &raquo;</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-2">
+         
+              <% blogs.forEach(blog => { %>
+            <h2><%=blog.title%></h2>
+            <p>
+              <%=blog.short%>
+            </p>
+            <p>
+              <a class="btn btn-secondary" href="/blog/<%=blog._id%>" role="button"
+                >View details &raquo;</a
+              >
+            </p>
+            <% }) %>
+
+          </div>
+
+
+          
+        
+        </div>
+
+        
+      </div>
+      <!-- /container -->
+    </main>
+    <%-include('./inc/footer') %>
   </body>
 </html>

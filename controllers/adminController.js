@@ -17,6 +17,7 @@ const admin_add = (req, res) => {
 
 const admin_add_post = (req, res) => {
   const blog = new Blog(req.body);
+
   blog
     .save()
     .then((result) => {

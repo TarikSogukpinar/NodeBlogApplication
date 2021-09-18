@@ -4,9 +4,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/404.css" />
     <title>Node Blog | <%= title %></title>
   </head>
   <body>
-    <h1>Sayfa Bulunamadı</h1>
+    <section class="page_404">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+              <div class="four_zero_four_bg">
+                <h1 class="text-center"><mark style="border-radius: 20px;">404 Sayfa bulunamadı!</mark></h1>
+              </div>
+
+              <div class="contant_box_404">
+                <h2 class="text-center"><mark style="border-radius: 20px;">Aradığınız sayfayı bulamadık veya böyle bir sayfa yok!</mark></h2>
+
+                <h2><mark>Başka bir sayfayı deneyebilirsiniz!</mark></h2>
+
+                <br>
+               
+
+                <a href="/blog" class="btn btn-warning btn-sm btn-sm active" role="button" aria-pressed="true">Ana Sayfa</a>
+                <a href="/login" class="btn btn-warning btn-sm btn-sm active" role="button" aria-pressed="true">Giriş Yap</a>
+                <a href="/signup" class="btn btn-warning btn-sm btn-sm active" role="button" aria-pressed="true">Üye Ol</a>
+               
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

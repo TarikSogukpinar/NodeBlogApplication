@@ -11,6 +11,24 @@ const userSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  email: {
+    type: String,
+    required: [true, "Please provide a email !"],
+    unique: true,
+    match: [
+      /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
+      "Please provide valid email",
+    ],
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  role: {
+    type: String,
+    default: "user",
+    enum: ["user", "admin"],
+  },
 });
 
 userSchema.statics.login = async function (username, password) {

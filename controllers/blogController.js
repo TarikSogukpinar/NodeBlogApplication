@@ -20,6 +20,7 @@ const blog_content = (req, res) => {
     })
     .catch((err) => {
       res.render("404", { title: "Sayfa Bulunamadı !" });
+      console.log('deneme')
     });
 };
 

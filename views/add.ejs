@@ -1,17 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%-include('./inc/head') %>
+    <%-include('./inc/head') %> <%-include('./inc/nav') %>
+
+    <link rel="stylesheet" href="/blogForm.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
-  <body>
-    <%-include('./inc/nav') %>
+  <br />
+  <br />
+  <body class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Blog Ekleyin</h4>
+          <form action="/admin/addpost" method="post">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Başlık</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  id="firstName"
+                  placeholder="Yazı başlığı giriniz"
+                  value=""
+                  required
+                />
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Açıklama</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  name="short"
+                  placeholder="Açıklama Giriniz"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Example textarea</label>
+              <textarea
+                class="form-control"
+                name="long"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                value=""
+                required
+              ></textarea>
+            </div>
+            <br />
+
+            <button
+              class="btn btn-primary btn-lg btn-block"
+              type="submit"
+              value="Kaydet"
+            >
+              Yazı Ekle
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
-  <section>
-    <form action="/admin/add" method="post">
-      <input type="text" name="title" placeholder="Baslik" required />
-      <input type="text" name="short" placeholder="Aciklama" required />
-      <input type="text" name="long" placeholder="Icerik" required />
-      <input type="submit" value="Kaydet" />
-    </form>
-  </section>
 </html>
