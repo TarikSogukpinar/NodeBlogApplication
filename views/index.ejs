@@ -8,19 +8,9 @@
     <%-include('./inc/nav') %>
     <br />
     <section>
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <h1>Yazilar</h1>
-            <ul>
-             
-            </ul>
-          </div>
-        </div> -->
       </div>
     </section>
     <main role="main">
-      <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Yazılar</h1>
@@ -38,12 +28,9 @@
           </p>
         </div>
       </div>
-
       <div class="container">
-        <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-2">
-         
               <% blogs.forEach(blog => { %>
             <h2><%=blog.title%></h2>
             <p>
@@ -55,17 +42,9 @@
               >
             </p>
             <% }) %>
-
           </div>
-
-
-          
-        
         </div>
-
-        
       </div>
-      <!-- /container -->
     </main>
     <%-include('./inc/footer') %>
   </body>
