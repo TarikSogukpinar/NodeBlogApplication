@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrpyt = require("bcrypt");
+const CustomError = require("../helpers/error/CustomError");
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -38,10 +39,10 @@ userSchema.statics.login = async function (username, password) {
     if (auth) {
       return user;
     } else {
-      throw Error("Parolanız hatalı");
+      return new CustomError("Parolanız hatalı");
     }
   } else {
-    throw Error("Kullanici Yok!");
+    return new CustomError("Kullanici Yok!");
   }
 };
 

@@ -1,4 +1,6 @@
 const Blog = require("../models/blogs");
+const User = require("../models/users");
+const CustomError = require("../helpers/error/CustomError");
 
 const admin_index = (req, res) => {
   Blog.find()
@@ -7,7 +9,7 @@ const admin_index = (req, res) => {
       res.render("admin", { title: "Admin", blogs: result });
     })
     .catch((err) => {
-      console.log(err);
+      return new CustomError(err);
     });
 };
 
@@ -24,7 +26,7 @@ const admin_add_post = (req, res) => {
       res.redirect("/admin");
     })
     .catch((err) => {
-      console.log(err);
+      return new CustomError(err);
     });
 };
 
@@ -35,7 +37,7 @@ const admin_delete = (req, res) => {
       res.json({ link: "/admin" });
     })
     .catch((err) => {
-      console.log(err);
+      return new CustomError(err);
     });
 };
 

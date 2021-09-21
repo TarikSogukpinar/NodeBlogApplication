@@ -13,14 +13,14 @@ const blog_index = (req, res) => {
 
 const blog_content = (req, res) => {
   const id = req.params.id;
-
   Blog.findById(id)
+
     .then((result) => {
       res.render("blog", { blog: result, title: "Detay" });
     })
     .catch((err) => {
       res.render("404", { title: "Sayfa Bulunamadı !" });
-      console.log('deneme')
+      console.log(err);
     });
 };
 

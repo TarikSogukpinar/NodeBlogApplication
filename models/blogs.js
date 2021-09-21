@@ -15,6 +15,9 @@ const blogSchema = new Schema(
       type: String,
       require: true,
     },
+    createdAt: {
+      type: Date,
+    },
   },
   { timestamps: true }
 );
