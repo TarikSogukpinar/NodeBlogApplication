@@ -23,6 +23,8 @@ const login_post = async (req, res) => {
   }
 };
 
+
+
 const signup_get = (req, res) => {
   res.render("signup", { title: "Kayıt" });
 };

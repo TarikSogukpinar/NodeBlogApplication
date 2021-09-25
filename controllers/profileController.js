@@ -12,6 +12,26 @@ const profile_index = (req, res) => {
     });
 };
 
+const update_add_profile = (req, res) => {
+  res.render("update", { title: "Bilgilerini Güncelle" });
+};
+
+const update_post = async (req, res, next) => {
+  const user = new User(req.body);
+
+  user
+    .save()
+    .then((result) => {
+      res.redirect("/");
+      next();
+    })
+    .catch((err) => {
+      return new CustomError(err);
+    });
+};
+
 module.exports = {
   profile_index,
+  update_post,
+  update_add_profile,
 };

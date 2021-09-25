@@ -1,4 +1,5 @@
 const Blog = require("../models/blogs");
+const CustomError = require("../helpers/error/CustomError");
 
 const blog_index = (req, res) => {
   Blog.find()
@@ -7,7 +8,7 @@ const blog_index = (req, res) => {
       res.render("index", { title: "Anasayfa ", blogs: result });
     })
     .catch((err) => {
-      console.log(err);
+      return new CustomError(err);
     });
 };
 
@@ -20,7 +21,7 @@ const blog_content = (req, res) => {
     })
     .catch((err) => {
       res.render("404", { title: "Sayfa Bulunamadı !" });
-      console.log(err);
+      return new CustomError(err);
     });
 };
 

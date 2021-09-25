@@ -30,6 +30,18 @@ const userSchema = new mongoose.Schema({
     default: "user",
     enum: ["user", "admin"],
   },
+  state: {
+    type: String,
+  },
+  region: {
+    type: String,
+  },
+  education: {
+    type: String,
+  },
+  phoneNumber: {
+    type: String,
+  },
 });
 
 userSchema.statics.login = async function (username, password) {
@@ -45,6 +57,8 @@ userSchema.statics.login = async function (username, password) {
     return new CustomError("Kullanici Yok!");
   }
 };
+
+
 
 //HASHİNG
 
